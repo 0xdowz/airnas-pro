@@ -3,10 +3,10 @@ import { Zap, Monitor, Share2, Shield, Settings, Play } from "lucide-react";
 import React, { useRef, useState } from "react";
 
 const fadeUp = {
-  initial: { opacity: 0, y: 40, scale: 0.95 },
-  whileInView: { opacity: 1, y: 0, scale: 1 },
+  initial: { opacity: 0, y: 50, scale: 0.95, filter: "blur(10px)" },
+  whileInView: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" },
   viewport: { once: true, margin: "-100px" },
-  transition: { type: "spring", stiffness: 100, damping: 20 }
+  transition: { type: "spring", stiffness: 100, damping: 25 }
 };
 
 const BentoCard = ({ children, className, delay = 0, style, ...props }: any) => {
@@ -26,6 +26,7 @@ const BentoCard = ({ children, className, delay = 0, style, ...props }: any) => 
     <motion.div
       ref={cardRef}
       {...fadeUp}
+      whileHover={{ scale: 1.02, transition: { duration: 0.4, ease: "easeOut" } }}
       transition={{ ...fadeUp.transition, delay }}
       onMouseMove={handleMouseMove}
       className={`glass-pro rounded-[2rem] p-8 md:p-10 relative overflow-hidden group cursor-crosshair border border-white/[0.08] hover:border-white/[0.2] transition-colors duration-500 ${className}`}

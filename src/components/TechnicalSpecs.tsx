@@ -16,16 +16,16 @@ export default function TechnicalSpecs() {
         
         <div className="md:w-1/2">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold tracking-tight-pro text-white mb-6"
           >
             Engineering specs.
           </motion.h2>
           <motion.p 
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
+             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
              viewport={{ once: true }}
              transition={{ delay: 0.1 }}
              className="text-apple-subtext text-lg leading-relaxed"
@@ -38,8 +38,8 @@ export default function TechnicalSpecs() {
           {specs.map((spec, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 20, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 * i, type: "spring", stiffness: 100 }}
               className="flex items-center justify-between py-6 border-b border-white/10 group hover:border-white/40 hover:bg-white/[0.02] -mx-4 px-4 rounded-xl transition-all duration-300 cursor-pointer"

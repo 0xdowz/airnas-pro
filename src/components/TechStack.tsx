@@ -26,10 +26,10 @@ export default function TechStack() {
 
       <div className="container max-w-6xl mx-auto relative z-10 flex flex-col items-center text-center">
         <motion.div
-           initial={{ opacity: 0, scale: 0.9, y: 50 }}
-           whileInView={{ opacity: 1, scale: 1, y: 0 }}
+           initial={{ opacity: 0, scale: 0.9, y: 50, filter: "blur(15px)" }}
+           whileInView={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
            viewport={{ once: true, margin: "-200px" }}
-           transition={{ duration: 1, type: "spring", stiffness: 80, damping: 20 }}
+           transition={{ duration: 1, type: "spring", stiffness: 80, damping: 25 }}
            className="glass-pro rounded-[3rem] p-16 md:p-24 max-w-4xl w-full flex flex-col items-center justify-center shadow-2xl relative overflow-hidden group hover:scale-[1.02] hover:-translate-y-4 transition-all duration-700"
         >
           {/* Subtle Glow on hover */}
