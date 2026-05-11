@@ -18,16 +18,16 @@ export default function PreRegister() {
     setIsLoading(true);
 
     try {
-      if ("YOUR_PUBLIC_KEY_HERE".includes("YOUR")) {
+      if ("2Rk7m-Oww2SVY1pxZ".includes("YOUR")) {
         // Mock successful registration for GitHub Pages presentation
         await new Promise(resolve => setTimeout(resolve, 1500));
       } else {
         // Initialize EmailJS with your Public Key
-        emailjs.init("YOUR_PUBLIC_KEY_HERE");
+        emailjs.init("2Rk7m-Oww2SVY1pxZ");
 
         await emailjs.send(
           "service_oxaunbv",
-          "YOUR_TEMPLATE_ID_HERE", // Replace with your actual Template ID
+          "template_h5wedlv", // Replace with your actual Template ID
           {
             email: email, // Maps to {{email}} in the EmailJS template
           }
