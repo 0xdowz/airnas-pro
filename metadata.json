@@ -1,0 +1,6 @@
+{
+  "name": "AirNas Pro",
+  "description": "Premium AirPlay receiver with ultra-low latency, 4K streaming, and cinematic UI. High-performance engine powered by FFmpeg and SDL2.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
