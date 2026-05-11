@@ -36,6 +36,22 @@ export default function Hero() {
   const glowX = useSpring(useTransform(mouseX, [-0.5, 0.5], [-200, 200]), { damping: 40, stiffness: 40 });
   const glowY = useSpring(useTransform(mouseY, [-0.5, 0.5], [-200, 200]), { damping: 40, stiffness: 40 });
 
+  const titleText1 = "Receiver.";
+  const titleText2 = "Redefined.";
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.05, delayChildren: 0.1 }
+    }
+  };
+
+  const charVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.8, filter: "blur(10px)" },
+    show: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", transition: { type: "spring", damping: 20, stiffness: 100 } }
+  };
+
   return (
     <section ref={containerRef} className="relative min-h-[120vh] flex flex-col items-center justify-start pt-40 px-6 overflow-hidden bg-space-black noise-bg perspective-1000">
       
@@ -57,30 +73,34 @@ export default function Hero() {
 
       <div className="container max-w-6xl mx-auto flex flex-col items-center text-center relative z-10 w-full mb-32 h-[40vh] justify-center">
         <motion.div style={{ y: yText, opacity: opacityText }} className="flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-pro text-white text-xs font-semibold mb-8 border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all cursor-pointer shadow-[0_0_30px_rgba(255,255,255,0.05)]"
-          >
-            <span className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_10px_#FFF]"></span>
-            AirNas Pro is coming soon
-          </motion.div>
+
 
           <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
-            className="text-6xl md:text-[140px] font-bold leading-[0.9] tracking-tight-pro text-white mb-6 select-none"
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
+            className="text-6xl md:text-[140px] font-bold leading-[0.9] tracking-tight-pro text-white mb-6 select-none flex flex-col items-center"
           >
-            Receiver. <br />
-            <span className="text-gradient">Redefined.</span>
+            <div className="flex">
+              {titleText1.split("").map((char, index) => (
+                <motion.span key={`t1-${index}`} variants={charVariants} className="inline-block">
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+            <div className="flex text-gradient mt-2 md:mt-4">
+              {titleText2.split("").map((char, index) => (
+                <motion.span key={`t2-${index}`} variants={charVariants} className="inline-block">
+                  {char}
+                </motion.span>
+              ))}
+            </div>
           </motion.h1>
 
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.9 }}
             className="text-apple-subtext text-xl md:text-3xl max-w-3xl leading-snug mb-10"
           >
             Experience zero-latency AirPlay mirroring in majestic 4K. 
@@ -88,9 +108,9 @@ export default function Hero() {
           </motion.p>
           
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.3 }}
+            initial={{ opacity: 0, scale: 0.9, filter: "blur(5px)" }}
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 1.1 }}
           >
              <Link to="/" className="btn-pro-primary text-lg py-4 px-10 inline-flex items-center gap-3">
               Get Early Access

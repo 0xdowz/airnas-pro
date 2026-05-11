@@ -48,8 +48,8 @@ export default function Navbar() {
           )}
         </div>
 
-        <Link to="/" className="flex items-center gap-2 bg-white text-black px-5 py-2.5 rounded-full text-sm font-semibold hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.15)] hover:shadow-[0_8px_30px_rgba(255,255,255,0.25)]">
-          <span className="hidden sm:inline">Pre-Register</span>
+        <Link to="/" className="flex items-center gap-2 bg-white text-black px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.15)] hover:shadow-[0_8px_30px_rgba(255,255,255,0.25)]">
+          <span>Pre-Register</span>
         </Link>
       </div>
     </motion.nav>
