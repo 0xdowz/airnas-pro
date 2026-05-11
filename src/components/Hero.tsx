@@ -71,7 +71,7 @@ export default function Hero() {
         <Logo className="w-[120vw] max-w-[1200px] h-auto text-white" />
       </div>
 
-      <div className="container max-w-6xl mx-auto flex flex-col items-center text-center relative z-10 w-full mb-32 h-[40vh] justify-center">
+      <div className="container max-w-6xl mx-auto flex flex-col items-center text-center relative z-10 w-full mb-16 md:mb-24 justify-center">
         <motion.div style={{ y: yText, opacity: opacityText }} className="flex flex-col items-center">
 
 
@@ -121,7 +121,7 @@ export default function Hero() {
 
       <motion.div
          style={{ scale: scaleImage, opacity: opacityImage }}
-         className="absolute bottom-0 left-0 w-full flex justify-center mt-20"
+         className="relative w-full flex justify-center mt-auto pt-12 md:pt-20"
       >
         <div className="relative w-full max-w-7xl px-4" style={{ perspective: 1200 }}>
           <div className="hero-mask absolute inset-0 bottom-0 z-20 pointer-events-none"></div>
