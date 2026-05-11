@@ -29,7 +29,7 @@ const BentoCard = ({ children, className, delay = 0, style, ...props }: any) => 
       whileHover={{ scale: 1.02, transition: { duration: 0.4, ease: "easeOut" } }}
       transition={{ ...fadeUp.transition, delay }}
       onMouseMove={handleMouseMove}
-      className={`glass-pro rounded-[2rem] p-8 md:p-10 relative overflow-hidden group cursor-crosshair border border-white/[0.08] hover:border-white/[0.2] transition-colors duration-500 ${className}`}
+      className={`glass-pro rounded-[2rem] p-6 sm:p-8 md:p-10 relative overflow-hidden group cursor-crosshair border border-white/[0.08] hover:border-white/[0.2] transition-colors duration-500 ${className}`}
       {...props}
     >
       <div 

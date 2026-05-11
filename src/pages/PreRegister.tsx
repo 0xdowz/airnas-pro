@@ -52,8 +52,8 @@ export default function PreRegister() {
           
           {!isSubmitted ? (
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
               className="w-full flex flex-col items-center"
             >
@@ -77,7 +77,7 @@ export default function PreRegister() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address"
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-full py-4 pl-6 pr-28 text-white placeholder:text-zinc-600 focus:outline-none focus:border-white/30 focus:bg-white/[0.06] transition-all duration-300 text-lg peer"
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-full py-3 md:py-4 pl-5 md:pl-6 pr-24 md:pr-28 text-white placeholder:text-zinc-600 focus:outline-none focus:border-white/30 focus:bg-white/[0.06] transition-all duration-300 text-base md:text-lg peer"
                     disabled={isLoading}
                   />
                   <button 

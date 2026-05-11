@@ -79,7 +79,7 @@ export default function Hero() {
             variants={containerVariants}
             initial="hidden"
             animate="show"
-            className="text-6xl md:text-[140px] font-bold leading-[0.9] tracking-tight-pro text-white mb-6 select-none flex flex-col items-center"
+            className="text-5xl sm:text-6xl md:text-8xl lg:text-[140px] font-bold leading-[0.9] tracking-tight-pro text-white mb-6 select-none flex flex-col items-center"
           >
             <div className="flex">
               {titleText1.split("").map((char, index) => (
@@ -126,10 +126,10 @@ export default function Hero() {
         <div className="relative w-full max-w-7xl px-4" style={{ perspective: 1200 }}>
           <div className="hero-mask absolute inset-0 bottom-0 z-20 pointer-events-none"></div>
           <motion.div
-            initial={{ y: 200, opacity: 0, rotateX: 10 }}
-            animate={{ y: 0, opacity: 1, rotateX: 0 }}
+            initial={{ y: 200, opacity: 0, rotateX: 10, scale: 1.1 }}
+            animate={{ y: 0, opacity: 1, rotateX: 0, scale: 1 }}
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-            transition={{ type: "spring", stiffness: 70, damping: 20, delay: 0.4 }}
+            transition={{ type: "spring", stiffness: 60, damping: 25, delay: 0.4 }}
             className="relative will-change-transform group"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-space-black via-transparent to-transparent z-10 h-full w-full pointer-events-none rounded-t-[3rem]"></div>
